@@ -22,8 +22,9 @@ namespace DailyProgrammer
             }
         }
 
-        public int FindDistanceRating(List<int> list, int gap = 1)
+        private static int FindDistanceRating(IList<int> list, int gap = 1)
         {
+
             var distanceRating = 0;
             foreach (var num in list)
             {
