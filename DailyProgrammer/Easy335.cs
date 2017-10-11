@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace DailyProgrammer
 {
-    public class Easy335
+    public class Easy335 : IRunnable
     {
         public void Run()
         {

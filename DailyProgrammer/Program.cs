@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DailyProgrammer
 {
-    class Program
+    public class Program
     {
-        public static void Main(String[] args)
+        public static void Main(string[] args)
         {
             var runnable = new Easy335();
             runnable.Run();
