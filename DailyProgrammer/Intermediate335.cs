@@ -16,6 +16,10 @@ namespace DailyProgrammer
 
         private static int CalculateFifteens(Card[] hand)
         {
+            foreach (var card in hand)
+            {
+                
+            }
             return 0;
         }
 
@@ -43,6 +47,7 @@ namespace DailyProgrammer
         {
             var card = new Card
             {
+                InitialValue = cardString,
                 Assignment = cardString.Substring(0, 1)
             };
 
@@ -87,6 +92,7 @@ namespace DailyProgrammer
         public Suit Suit { get; set; }
         public int Value { get; set; }
         public string Assignment { get; set; }
+        public string InitialValue { get; set; }
     }
 
     public enum Suit

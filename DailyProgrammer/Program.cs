@@ -10,7 +10,7 @@ namespace DailyProgrammer
     {
         public static void Main(string[] args)
         {
-            var runnable = new Easy335();
+            var runnable = new Easy336();
             runnable.Run();
         }
     }
