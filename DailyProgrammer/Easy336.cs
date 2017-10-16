@@ -28,7 +28,7 @@ namespace DailyProgrammer
         {
             var list = potential.Where(x => x >= expected).ToList();
             potential = potential.Where(x => x < expected).ToList();
-            potential.Sort();
+            potential = potential.OrderByDescending(x => x).ToList();
             potential[0]++;
             potential.Remove(potential.Count - 1);
             if (potential.Count == 0)
