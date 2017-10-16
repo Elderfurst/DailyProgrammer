@@ -8,37 +8,38 @@ namespace DailyProgrammer
 {
     public class Easy336 : IRunnable
     {
-        private readonly int[] _expectedValues = new int[]
+        private readonly List<int> _input = new List<int>
+        {
+            21, 9, 5, 8, 10, 1, 3
+        };
+        private readonly List<int> _expectedValues = new List<int>
         {
             10, 15
         };
         public void Run()
         {
-            int[] input = new int[]
+            foreach (var num in _expectedValues)
             {
-                21, 9, 5, 8, 10, 1, 3
-            };
-            foreach (int num in _expectedValues)
-            {
-                Console.WriteLine("Total number of input values that can be greater than " + num + ": " + CalculateCannibals(num, input));
+                Console.WriteLine("Total number of input values that can be greater than " + num + ": " + CalculateCannibals(_input, num).Count);
             }
         }
 
-        private int CalculateCannibals(int num, int[] input)
+        private List<int> CalculateCannibals(List<int> potential, int expected)
         {
-            var counter = 0;
-            foreach (int input in _input)
+            var list = potential.Where(x => x >= expected).ToList();
+            potential = potential.Where(x => x < expected).ToList();
+            potential.Sort();
+            potential[0]++;
+            potential.Remove(potential.Count - 1);
+            if (potential.Count == 0)
             {
-                if (input > num)
-                {
-                    counter++;
-                }
-                else
-                {
-                    
-                }
+                return list;
             }
-            return counter;
+            else
+            {
+                list.AddRange(CalculateCannibals(potential, expected));
+                return list;
+            }
         }
     }
 }
