@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DailyProgrammer
 {
@@ -24,19 +22,19 @@ namespace DailyProgrammer
             }
         }
 
-        private List<int> CalculateCannibals(List<int> potential, int expected)
+        private static List<int> CalculateCannibals(List<int> potential, int expected)
         {
             var list = potential.Where(x => x >= expected).ToList();
             potential = potential.Where(x => x < expected).ToList();
-            potential = potential.OrderByDescending(x => x).ToList();
-            potential[0]++;
-            potential.Remove(potential.Count - 1);
             if (potential.Count == 0)
             {
                 return list;
             }
             else
             {
+                potential = potential.OrderByDescending(x => x).ToList();
+                potential[0]++;
+                potential.Remove(potential[potential.Count - 1]);
                 list.AddRange(CalculateCannibals(potential, expected));
                 return list;
             }
