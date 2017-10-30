@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Easy335.cs" />
     <Compile Include="Easy336.cs" />
+    <Compile Include="Easy338.cs" />
     <Compile Include="Intermediate335.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
