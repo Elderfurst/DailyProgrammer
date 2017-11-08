@@ -45,6 +45,7 @@
     <Compile Include="Easy335.cs" />
     <Compile Include="Easy336.cs" />
     <Compile Include="Easy338.cs" />
+    <Compile Include="Easy339.cs" />
     <Compile Include="Intermediate335.cs" />
     <Compile Include="Intermediate336.cs" />
     <Compile Include="Program.cs" />
@@ -53,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Input\Easy339.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
